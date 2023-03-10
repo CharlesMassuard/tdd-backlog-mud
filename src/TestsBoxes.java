@@ -17,5 +17,14 @@ public class TestsBoxes{
                 b.add(new Thing("truc2"));
         }
 
+        @Test
+        public void testBoxContient(){
+                Box b = new Box();
+                Thing thing = new Thing("Je suis un super Thing");
+                assert !b.contient(thing);
+                b.add(thing);
+                assert b.contient(thing);
+        }
+
         
 };
