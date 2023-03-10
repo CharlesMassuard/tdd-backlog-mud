@@ -10,13 +10,19 @@ class Thing{
 public class Box {
 
     private ArrayList<Thing> contents = new ArrayList<Thing>();
+    private boolean ouvert;
 
     public Box(){
+        this.ouvert=true;
         System.out.println("Box créée");
+        
     }
 
     public void add(Thing truc){
+        if (this.ouvert){
         this.contents.add(truc);
+        }
+
     }
 
     public boolean contient(Thing thing){
@@ -34,6 +40,19 @@ public class Box {
         }
         throw new ThingNotFound(); //lève l'exception        
     }
+
+    public void open(){
+        this.ouvert=true;
+    }
+
+    public void close(){
+        this.ouvert=false;
+    }
+
+    public boolean isOpen(){
+        return this.ouvert;
+    }
+
 }
 
 class ThingNotFound extends Exception{
