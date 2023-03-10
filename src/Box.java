@@ -18,4 +18,8 @@ public class Box {
     public void add(Thing truc){
         this.contents.add(truc);
     }
+
+    public boolean contient(Thing thing){
+        return this.contents.contains(thing);
+    }
 }

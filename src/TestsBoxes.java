@@ -16,4 +16,6 @@ public class TestsBoxes{
                 b.add(new Thing("truc1"));
                 b.add(new Thing("truc2"));
         }
+
+        
 };
