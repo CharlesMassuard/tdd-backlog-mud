@@ -9,7 +9,7 @@ class Thing{
 
 public class Box {
 
-    ArrayList<Thing> contents = new ArrayList<Thing>();
+    private ArrayList<Thing> contents = new ArrayList<Thing>();
 
     public Box(){
         System.out.println("Box créée");
