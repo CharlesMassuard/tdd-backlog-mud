@@ -5,7 +5,7 @@ public class TestsBoxes{
 
         @Test
         public void testBoxCreate() {
-        Box b = new Box();
+                Box b = new Box();
         }
 
         /** On veut pouvoir mettre des trucs dedans */
@@ -13,7 +13,7 @@ public class TestsBoxes{
         @Test
         public void testBoxAdd(){
                 Box b=new Box();
-                b.add("truc 1 ");
-                b.add("truc 2 ");
+                b.add(new Thing("truc1"));
+                b.add(new Thing("truc2"));
         }
 };
