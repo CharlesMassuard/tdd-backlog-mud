@@ -22,4 +22,21 @@ public class Box {
     public boolean contient(Thing thing){
         return this.contents.contains(thing);
     }
+
+    public boolean remove(Thing thing) throws ThingNotFound{
+        if(this.contient(thing)){
+            for(int i = 0; i<this.contents.size(); ++i){
+                if(this.contents.get(i).equals(thing)){
+                    this.contents.remove(i);
+                    return true;
+                }
+            }
+        }
+        throw new ThingNotFound(); //lève l'exception        
+    }
 }
+
+class ThingNotFound extends Exception{
+
+}
+

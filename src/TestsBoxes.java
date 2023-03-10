@@ -26,5 +26,17 @@ public class TestsBoxes{
                 assert b.contient(thing);
         }
 
-        
+        @Test
+        public void testBoxRemove(){
+                Box b = new Box();
+                Thing thing = new Thing("Je suis un super Thing");
+                b.add(thing);
+                try{
+                        b.remove(thing);
+                } catch(ThingNotFound error)
+                {
+                        System.out.println("N'est pas présent dans la box");
+                }
+                assert !b.contient(thing);
+        }     
 };
