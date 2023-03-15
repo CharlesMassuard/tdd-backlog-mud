@@ -53,9 +53,24 @@ public class Box {
         return this.ouvert;
     }
 
+    public String actionLook() throws BoiteVide{
+        if(this.contents.size()>0){
+            String retour = "La boite contient : ";
+            for(Thing truc : this.contents){
+                retour += truc.name+", ";
+            }
+            return retour;
+        }
+        throw new BoiteVide();
+    }
+
 }
 
 class ThingNotFound extends Exception{
+
+}
+
+class BoiteVide extends Exception{
 
 }
 

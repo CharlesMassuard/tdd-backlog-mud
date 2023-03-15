@@ -39,4 +39,31 @@ public class TestsBoxes{
                 }
                 assert !b.contient(thing);
         }     
+
+        @Test
+        public void testActionLook(){
+                Box b = new Box();
+                try{
+                        b.actionLook();
+                } catch(BoiteVide error)
+                {
+                        System.out.println("La boite est vide !");
+                }
+                Thing thing = new Thing("Je suis un super Thing");
+                b.add(thing);
+                try{
+                        assert b.actionLook().equals("La boite contient : Je suis un super Thing, ");
+                } catch(BoiteVide error)
+                {
+                        System.out.println("La boite est vide !");
+                }
+                Thing chose = new Thing("Je suis la Chose");
+                b.add(chose);
+                try{
+                        assert b.actionLook().equals("La boite contient : Je suis un super Thing, Je suis la Chose, ");
+                } catch(BoiteVide error)
+                {
+                        System.out.println("La boite est vide !");
+                }
+        }
 };
