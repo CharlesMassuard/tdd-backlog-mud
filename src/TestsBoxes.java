@@ -44,26 +44,26 @@ public class TestsBoxes{
         public void testActionLook(){
                 Box b = new Box();
                 try{
-                        b.actionLook();
-                } catch(BoiteVide error)
+                        assert b.actionLook().equals("La boite est vide !");
+                } catch(BoiteFermee error)
                 {
-                        System.out.println("La boite est vide !");
+                        System.out.println("La boite est fermée !");
                 }
                 Thing thing = new Thing("Je suis un super Thing");
                 b.add(thing);
                 try{
-                        assert b.actionLook().equals("La boite contient : Je suis un super Thing, ");
-                } catch(BoiteVide error)
+                        assert b.actionLook().equals("La boite contient : Je suis un super Thing ");
+                } catch(BoiteFermee error)
                 {
-                        System.out.println("La boite est vide !");
+                        System.out.println("La boite est fermée !");
                 }
                 Thing chose = new Thing("Je suis la Chose");
                 b.add(chose);
                 try{
-                        assert b.actionLook().equals("La boite contient : Je suis un super Thing, Je suis la Chose, ");
-                } catch(BoiteVide error)
+                        assert b.actionLook().equals("La boite contient : Je suis un super Thing Je suis la Chose ");
+                } catch(BoiteFermee error)
                 {
-                        System.out.println("La boite est vide !");
+                System.out.println("La boite est fermée !");
                 }
         }
 };
