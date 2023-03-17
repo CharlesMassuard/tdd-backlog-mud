@@ -91,4 +91,39 @@ public class TestsBoxes{
                 Thing grominet = new Thing("Grominet", 8);
                 assert box.hasRoomFor(grominet);
         }
+
+        @Test
+        public void testActionAdd(){
+                Box b = new Box();
+                Box box = new Box();
+                b.setCapacity(5);
+                box.setCapacity(-1);
+                Thing laChose = new Thing("La chose", 4);
+                Thing souris = new Thing("souris", 5);
+                Thing mickey = new Thing("Mickey", 7);
+                try{
+                        assert b.actionAdd(laChose);
+                } catch(BoitePleine error)
+                {
+                        System.out.println("La boite est pleine 1!");
+                }
+                try{
+                        assert b.actionAdd(souris);
+                } catch(BoitePleine error)
+                {
+                        System.out.println("La boite est pleine 2!");
+                }
+                try{
+                        assert box.actionAdd(mickey);
+                } catch(BoitePleine error)
+                {
+                        System.out.println("La boite est pleine 3!");
+                }
+                try{
+                        assert box.actionAdd(souris);
+                } catch(BoitePleine error)
+                {
+                        System.out.println("La boite est pleine 4!");
+                }
+        }
 }
