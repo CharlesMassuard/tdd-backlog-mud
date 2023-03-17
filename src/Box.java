@@ -115,9 +115,9 @@ public class Box {
     }
 
     /**
-     * 
-     * @return
-     * @throws BoiteFermee 
+     * Retourne ce qui est contenu dans la boite
+     * @return Un string représentant ce qu'il y a dans la boite
+     * @throws BoiteFermee si la boite est fermée
      */
     public String actionLook() throws BoiteFermee{
         if(this.isOpen()){
@@ -133,14 +133,27 @@ public class Box {
         throw new BoiteFermee();
     }
 
+    /**
+     * Permet de définir une capacité à une boite 
+     * @param capacity La capacité que l'on souhaite donné à la boite
+     */
     public void setCapacity(double capacity){
         this.capacity = capacity;
     }
 
+    /**
+     * Retourne la capacité de la boite
+     * @return La capacité de la boite
+     */
     public double capacity(){
         return this.capacity;
     }
 
+    /**
+     * Retourne si la boite a la place pour un objet
+     * @param chose L'objet que l'on veut rajouter
+     * @return true si la boite a la place, false sinon
+     */
     public boolean hasRoomFor(Thing chose){
         double poidsThing = chose.volume();
         double capaciteBoite = this.capacity();
@@ -153,6 +166,12 @@ public class Box {
         return false;
     }
 
+    /**
+     * Permet d'ajouter un objet à la boite
+     * @param chose L'objet que l'on veut rajouter
+     * @return true si l'objet a été rajouté, false sinon
+     * @throws BoitePleine si la boite est pleine
+     */
     public boolean actionAdd(Thing chose) throws BoitePleine{
         if(this.isOpen()){
             boolean placeSuffisante = this.hasRoomFor(chose);

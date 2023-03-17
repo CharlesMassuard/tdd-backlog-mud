@@ -18,6 +18,7 @@ public class TestsBoxes{
                 b.add(new Thing("truc2"));
         }
 
+        
         @Test
         public void testBoxContient(){
                 Box b = new Box();
