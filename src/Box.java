@@ -115,7 +115,14 @@ public class Box {
 
     public boolean hasRoomFor(Thing chose){
         double poidsThing = chose.volume();
-        return true;
+        double capaciteBoite = this.capacity();
+        if(capaciteBoite == -1){ //si la boite a une capacité de -1 alors sa capacité est illimitée
+            return true;
+        }
+        if(poidsThing <= capaciteBoite){
+            return true;
+        }
+        return false;
     }
 }
 
