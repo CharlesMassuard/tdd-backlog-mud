@@ -38,11 +38,13 @@ public class Box {
 
     private ArrayList<Thing> contents = new ArrayList<Thing>();
     private boolean ouvert;
+    private double capacity;
 
     /** Crée une box  */
 
     public Box(){
         this.ouvert=true;
+        this.capacity=-1;
         System.out.println("Box créée");
         
     }
@@ -114,6 +116,26 @@ public class Box {
             return "La boite est vide !";
         }
         throw new BoiteFermee();
+    }
+
+    public void setCapacity(double capacity){
+        this.capacity = capacity;
+    }
+
+    public double capacity(){
+        return this.capacity;
+    }
+
+    public boolean hasRoomFor(Thing chose){
+        double poidsThing = chose.volume();
+        double capaciteBoite = this.capacity();
+        if(capaciteBoite == -1){ //si la boite a une capacité de -1 alors sa capacité est illimitée
+            return true;
+        }
+        if(poidsThing <= capaciteBoite){
+            return true;
+        }
+        return false;
     }
 }
 
