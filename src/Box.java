@@ -124,6 +124,10 @@ public class Box {
         }
         return false;
     }
+
+    public boolean actionAdd(Thing chose){
+        return true;
+    }
 }
 
 class ThingNotFound extends Exception{
@@ -131,6 +135,10 @@ class ThingNotFound extends Exception{
 }
 
 class BoiteFermee extends Exception{
+
+}
+
+class BoitePleine extends Exception{
 
 }
 
