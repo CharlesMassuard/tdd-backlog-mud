@@ -12,13 +12,17 @@ public class Box {
     private ArrayList<Thing> contents = new ArrayList<Thing>();
     private boolean ouvert;
 
-    
+    /** Crée une box  */
+
     public Box(){
         this.ouvert=true;
         System.out.println("Box créée");
         
     }
 
+    /** Ajoute un objet à la boite 
+     * @param truc L'objet qui représente ce que l'on veut rajouter
+     */
     public void add(Thing truc){
         if (this.ouvert){
         this.contents.add(truc);
@@ -26,6 +30,11 @@ public class Box {
 
     }
 
+    /**
+     * Retourne un booléén qui correspond à si l'objet est dans la boite
+     * @param thing Représente l'objet que l'on veut rechercher
+     * @return true si l'objet est dans la boite, false sinon
+     */
     public boolean contient(Thing thing){
         return this.contents.contains(thing);
     }
@@ -42,18 +51,30 @@ public class Box {
         throw new ThingNotFound(); //lève l'exception        
     }
 
+    /** Ouvre la boîte */
+
     public void open(){
         this.ouvert=true;
     }
 
+    /** Ferme la boîte */
     public void close(){
         this.ouvert=false;
     }
 
+    /**
+     * Retourne si la boite est ouverte ou pas
+     * @return Un bouléen qui est à true si la boite est ouverte, false sinon
+     */
     public boolean isOpen(){
         return this.ouvert;
     }
 
+    /**
+     * 
+     * @return
+     * @throws BoiteFermee
+     */
     public String actionLook() throws BoiteFermee{
         if(this.isOpen()){
             if(this.contents.size()>0){
