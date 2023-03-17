@@ -2,10 +2,24 @@ import java.util.ArrayList;
 
 class Thing{
     String name;
+    double poids;
+
     public Thing(String name){
         this.name = name;
+        this.poids = 0;
     }
+
+    public Thing(String name, double poids){
+        this.name = name;
+        this.poids = poids;
+    }
+
+    public double volume(){
+        return this.poids;
+    }
+
 }
+
 
 public class Box {
 
@@ -25,7 +39,7 @@ public class Box {
      */
     public void add(Thing truc){
         if (this.ouvert){
-        this.contents.add(truc);
+            this.contents.add(truc);
         }
 
     }
