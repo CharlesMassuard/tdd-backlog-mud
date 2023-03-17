@@ -67,4 +67,9 @@ public class TestsBoxes{
                 System.out.println("La boite est fermée !");
                 }
         }
-};
+
+        @Test
+        public void testCapacity(){
+                Box b = new Box();
+        }
+}

@@ -25,9 +25,11 @@ public class Box {
 
     private ArrayList<Thing> contents = new ArrayList<Thing>();
     private boolean ouvert;
+    private double capacity;
 
     public Box(){
         this.ouvert=true;
+        this.capacity=-1;
         System.out.println("Box créée");
         
     }
@@ -79,6 +81,19 @@ public class Box {
             return "La boite est vide !";
         }
         throw new BoiteFermee();
+    }
+
+    public void setCapacity(double capacity){
+        this.capacity = capacity;
+    }
+
+    public double capacity(){
+        return this.capacity;
+    }
+
+    public boolean hasRoomFor(Thing chose){
+        double poidsThing = chose.volume();
+        return true;
     }
 }
 
