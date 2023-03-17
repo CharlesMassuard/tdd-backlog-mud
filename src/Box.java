@@ -38,6 +38,13 @@ class Thing{
         return this.poids;
     }
 
+    public boolean hasName(String nom){
+        if(this.getName().equals(nom)){
+            return true;
+        }
+        return false;
+    }
+
 }
 
 

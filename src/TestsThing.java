@@ -15,4 +15,11 @@ public class TestsThing{
         laChose.setName("La Chose");
         assert laChose.getName().equals("La Chose");
     }
+
+    @Test
+    public void testHasName(){
+        Thing laChose = new Thing("La Chose");
+        assert laChose.hasName("La Chose");
+        assert !laChose.hasName("Mercredi");
+    }
 }
