@@ -134,4 +134,27 @@ public class TestsBoxes{
                         System.out.println("La boite est pleine 5!");
                 }
         }
+
+        @Test
+        public void testFind(){
+                Box b = new Box();
+                b.setCapacity(5);
+                Thing laChose = new Thing("La Chose");
+                Thing souris = new Thing("Souris");
+                Thing mickey = new Thing("Mickey");
+                b.add(laChose);
+                try{
+                        assert b.find("La Chose").equals(laChose);
+                } catch(ThingNotFound error)
+                {
+                        System.out.println("Objet non trouvé !");
+                }
+                try{
+                        assert !b.find("Mercredi").equals(laChose);
+                } catch(ThingNotFound error)
+                {
+                        System.out.println("Objet non trouvé !");
+                }
+
+        }
 }

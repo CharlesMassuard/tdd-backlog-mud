@@ -45,6 +45,17 @@ class Thing{
         return false;
     }
 
+    @Override
+    public boolean equals(Object obj){
+        if(obj==null){return false;}
+        if(obj==this){return true;}
+        if(obj instanceof Box){
+            Thing b = (Thing) obj;
+            return b.getName().equals(this.getName()) && b.volume() == this.volume();
+        }
+        return false;
+    }
+
 }
 
 
@@ -185,6 +196,18 @@ public class Box {
             throw new BoitePleine();
         }
         return false;
+    }
+
+    public Thing find(String nom) throws ThingNotFound{
+        if(this.isOpen()){
+            for(Thing chose : this.contents){
+                if(chose.getName().equals(nom)){
+                    return chose;
+                }
+            }
+            throw new ThingNotFound();
+        }
+        return null;
     }
 }
 
