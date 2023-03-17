@@ -38,6 +38,11 @@ class Thing{
         return this.poids;
     }
 
+    /**
+     * Vérifie si l'objet a le nom passé en paramètre
+     * @param nom Le nom à vérifier
+     * @return true si l'objet a le nom passé en paramètre, false sinon
+     */
     public boolean hasName(String nom){
         if(this.getName().equals(nom)){
             return true;
@@ -45,6 +50,11 @@ class Thing{
         return false;
     }
 
+    /**
+     * Vérifie si deux objets sont égaux
+     * @param obj L'objet à comparer
+     * @return true si les objets sont égaux, false sinon
+     */
     @Override
     public boolean equals(Object obj){
         if(obj==null){return false;}
@@ -198,6 +208,12 @@ public class Box {
         return false;
     }
 
+    /**
+     * Cherche un objet dans la boite
+     * @param nom Le nom de l'objet que l'on cherche
+     * @return L'objet si il est trouvé, null sinon
+     * @throws ThingNotFound si l'objet n'est pas trouvé
+     */
     public Thing find(String nom) throws ThingNotFound{
         if(this.isOpen()){
             for(Thing chose : this.contents){
