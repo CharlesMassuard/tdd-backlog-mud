@@ -4,16 +4,29 @@ class Thing{
     String name;
     double poids;
 
+    /**
+     * Créer un Thing à partir d'un nom
+     * @param name Le nom de l'objet 
+     */
     public Thing(String name){
         this.name = name;
         this.poids = 0;
     }
 
+    /**
+     * Créer un Thing à partir d'un nom et de son poids 
+     * @param name Le nom de l'objet 
+     * @param poids Le poids de l'objet
+     */
     public Thing(String name, double poids){
         this.name = name;
         this.poids = poids;
     }
 
+    /**
+     * Retourne son poids
+     * @return Le poids de l'objet
+     */
     public double volume(){
         return this.poids;
     }
@@ -89,7 +102,7 @@ public class Box {
     /**
      * 
      * @return
-     * @throws BoiteFermee
+     * @throws BoiteFermee 
      */
     public String actionLook() throws BoiteFermee{
         if(this.isOpen()){
