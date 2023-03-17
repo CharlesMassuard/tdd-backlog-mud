@@ -36,13 +36,14 @@ class Thing{
 
 public class Box {
 
-    private ArrayList<Thing> contents = new ArrayList<Thing>();
+    private ArrayList<Thing> contents;
     private boolean ouvert;
     private double capacity;
 
     /** Crée une box  */
 
     public Box(){
+        this.contents = new ArrayList<Thing>();
         this.ouvert=true;
         this.capacity=-1;
         System.out.println("Box créée");
@@ -138,8 +139,19 @@ public class Box {
         return false;
     }
 
-    public boolean actionAdd(Thing chose){
-        return true;
+    public boolean actionAdd(Thing chose) throws BoitePleine{
+        if(this.isOpen()){
+            boolean placeSuffisante = this.hasRoomFor(chose);
+            if(placeSuffisante){
+                this.add(chose);
+                if(this.capacity()!=-1){
+                    this.capacity -= chose.volume();
+                }
+                return true;
+            }
+            throw new BoitePleine();
+        }
+        return false;
     }
 }
 
