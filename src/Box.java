@@ -149,7 +149,7 @@ public class Box {
                 }
             return retour;
             }
-            return "La boite est vide !";
+            return "La boite est vide !"; //lever une exception (demander au professeur pour savoir comment lever différentes exceptions dans une seule méthode)
         }
         throw new BoiteFermee();
     }
@@ -205,7 +205,7 @@ public class Box {
             }
             throw new BoitePleine();
         }
-        return false;
+        return false; //lever une exception (demander au professeur pour savoir comment lever différentes exceptions dans une seule méthode)
     }
 
     /**
@@ -223,7 +223,7 @@ public class Box {
             }
             throw new ThingNotFound();
         }
-        return null;
+        return null; //lever une exception (demander au professeur pour savoir comment lever différentes exceptions dans une seule méthode)
     }
 }
 
