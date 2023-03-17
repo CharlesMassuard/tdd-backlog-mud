@@ -125,5 +125,12 @@ public class TestsBoxes{
                 {
                         System.out.println("La boite est pleine 4!");
                 }
+                box.close();
+                try{
+                        assert !box.actionAdd(laChose);
+                } catch(BoitePleine error)
+                {
+                        System.out.println("La boite est pleine 5!");
+                }
         }
 }

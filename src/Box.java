@@ -140,15 +140,18 @@ public class Box {
     }
 
     public boolean actionAdd(Thing chose) throws BoitePleine{
-        boolean placeSuffisante = this.hasRoomFor(chose);
-        if(placeSuffisante){
-            this.add(chose);
-            if(this.capacity()!=-1){
-                this.capacity -= chose.volume();
+        if(this.isOpen()){
+            boolean placeSuffisante = this.hasRoomFor(chose);
+            if(placeSuffisante){
+                this.add(chose);
+                if(this.capacity()!=-1){
+                    this.capacity -= chose.volume();
+                }
+                return true;
             }
-            return true;
+            throw new BoitePleine();
         }
-        throw new BoitePleine();
+        return false;
     }
 }
 
