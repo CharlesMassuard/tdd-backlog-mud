@@ -80,15 +80,15 @@ public class TestsBoxes{
         public void testHasRoomFor(){
                 Box b = new Box();
                 b.setCapacity(5);
-                Thing laChose = new Thing("La chose", 4);
-                Thing souris = new Thing("souris", 5);
-                Thing mickey = new Thing("Mickey", 7);
+                Thing laChose = new Thing(4);
+                Thing souris = new Thing(5);
+                Thing mickey = new Thing(7);
                 assert b.hasRoomFor(laChose);
                 assert b.hasRoomFor(souris);
                 assert !b.hasRoomFor(mickey);
                 Box box = new Box();
                 box.setCapacity(-1);
-                Thing grominet = new Thing("Grominet", 8);
+                Thing grominet = new Thing(8);
                 assert box.hasRoomFor(grominet);
         }
 
@@ -98,9 +98,9 @@ public class TestsBoxes{
                 Box box = new Box();
                 b.setCapacity(5);
                 box.setCapacity(-1);
-                Thing laChose = new Thing("La chose", 4);
-                Thing souris = new Thing("souris", 5);
-                Thing mickey = new Thing("Mickey", 7);
+                Thing laChose = new Thing(4);
+                Thing souris = new Thing(5);
+                Thing mickey = new Thing(7);
                 try{
                         assert b.actionAdd(laChose);
                 } catch(BoitePleine error)

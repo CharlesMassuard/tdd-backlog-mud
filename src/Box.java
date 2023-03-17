@@ -18,9 +18,16 @@ class Thing{
      * @param name Le nom de l'objet 
      * @param poids Le poids de l'objet
      */
-    public Thing(String name, double poids){
-        this.name = name;
+    public Thing(double poids){
         this.poids = poids;
+    }
+
+    public void setName(String nom){
+        this.name = nom;
+    }
+
+    public String getName(){
+        return this.name;
     }
 
     /**
