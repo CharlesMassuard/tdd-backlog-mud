@@ -12,6 +12,7 @@ public class Box {
     private ArrayList<Thing> contents = new ArrayList<Thing>();
     private boolean ouvert;
 
+    
     public Box(){
         this.ouvert=true;
         System.out.println("Box créée");
