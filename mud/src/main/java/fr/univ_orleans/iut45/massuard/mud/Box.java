@@ -1,3 +1,5 @@
+package fr.univ_orleans.iut45.massuard.mud;
+
 import java.util.ArrayList;
 
 class Thing{
