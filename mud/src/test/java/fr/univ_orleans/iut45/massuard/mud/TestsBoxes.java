@@ -8,11 +8,14 @@ public class TestsBoxes{
         public void testBoxCreate() {
                 Box b = new Box();
         }
-
+        
         @Test
         public void testBoxFromJson(){
-                Box b = Box.fromJson("boite_test.json");
-                assertEquals(17, b.capacity());
+                String chemin_boite_test_json = 
+                        TestsBoxes.class.getClassLoader().getResource("boite_test.json").getFile();
+                Box b = Box.fromJson(chemin_boite_test_json);
+                assertEquals(b.capacity(), -1);
+                assertTrue(b.isOpen());
 
         }
 

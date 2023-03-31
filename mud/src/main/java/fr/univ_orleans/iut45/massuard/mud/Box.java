@@ -227,6 +227,13 @@ public class Box {
         }
         return null; //lever une exception (demander au professeur pour savoir comment lever différentes exceptions dans une seule méthode)
     }
+
+    public static Box fromJson(InputStream stream) throws FileNotFoundException{
+        InputStreamReader r = new InputStreamReader(stream);
+        Gson gson = new Gson();
+        Box b = gson.fromJson(r, classOfT:Box.class);
+        return b;
+    }
 }
 
 class ThingNotFound extends Exception{
