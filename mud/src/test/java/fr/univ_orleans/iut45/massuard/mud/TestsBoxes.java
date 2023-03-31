@@ -9,6 +9,13 @@ public class TestsBoxes{
                 Box b = new Box();
         }
 
+        @Test
+        public void testBoxFromJson(){
+                Box b = Box.fromJson("boite_test.json");
+                assertEquals(17, b.capacity());
+
+        }
+
         /** On veut pouvoir mettre des trucs dedans */
 
         @Test
